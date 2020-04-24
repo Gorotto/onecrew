@@ -1,0 +1,46 @@
+mixin header()
+  header.header
+    .container
+      ul.header__menu
+        li
+          a.smoothScroll(href="#case") Кейсы
+        li
+          a.smoothScroll(href="#clients") Клиенты
+        li
+          a.smoothScroll(href="#comand") Команда
+      a.header__logo(href="")
+        img(src="img/logo.png", alt="")
+        span.logo__descr удаленный отдел маркетинга
+      .sandwich
+        .sw-topper
+        .sw-bottom
+        .sw-footer
+      .mobile__menu
+        ul.header__menu
+          li
+            a.smoothScroll(href="#case") Кейсы
+          li
+            a.smoothScroll(href="#clients") Клиенты
+          li
+            a.smoothScroll(href="#comand") Команда
+        //- ul.header__lang.lang
+        //-   li.active
+        //-     a(href="") ru
+        //-   li
+        //-     a(href="") en
+        a.header__phone(href="tel:89778177223") 8 977 817-72-23
+        
+      .header__info
+        a.header__phone(href="tel:89778177223") 8 977 817-72-23
+        ul.header__lang.lang
+          li.active
+            a(href="") Ru
+          li
+            a(href="") En
+    .container
+      .header__wrap
+        h1.header__title Запустим онлайн-школу
+          span продай свою экспертность не выходя из дома
+        .head__price
+          p.head__text Узнайте сколько стоит запуск именно твоей школы
+          a.head__calc-btn(href="") Рассчитать стоимость

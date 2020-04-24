@@ -1,0 +1,18 @@
+// Это диспетчер подключений, тут не должно быть ничего, кроме импортов
+
+// Глобальные подключения
+@import "grid.scss";
+@import "variables.scss";
+@import "elements.scss";
+@import "fonts.scss";
+
+// БЭМ-блоки. Один БЭМ-блок = 1 файл. ВСЕГДА.
+@import "./src/blocks/page/page.scss";
+@import "./src/blocks/header/header.scss";
+@import "./src/blocks/footer/footer.scss";
+@import "./src/blocks/works/works.scss";
+@import "./src/blocks/reviews/reviews.scss";
+@import "./src/blocks/included/included.scss";
+@import "./src/blocks/comands/comands.scss";
+@import "./src/blocks/faq/faq.scss";
+@import "./src/blocks/contact-form/contact-form.scss";

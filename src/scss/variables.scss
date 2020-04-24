@@ -1,0 +1,29 @@
+// $green:                       #79c600;
+
+
+$font-family:                 'PFDinDisplayPro', sans-serif;
+$font-size:                   14px;
+$line-height:                 1.4;
+
+
+
+
+
+// $rubl:                        'ALSRubl', sans-serif;
+$b:                        'OpenSansBold', sans-serif;
+$r:                        'OpenSansRegular', sans-serif;
+
+.container {
+  @include container();
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin flex {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: row wrap;
+}

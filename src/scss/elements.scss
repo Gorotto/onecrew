@@ -1,0 +1,42 @@
+
+
+section {
+  width: 100%;
+  @include flex;
+  box-sizing: border-box;
+}
+
+
+// .rubl {
+//   display: inline-block;
+//   position: relative;
+//   left: -3px;
+//   &::before {
+//     content:'a';
+//     font-family: $rubl;
+//     font-size: 18px;
+//     color: #000;
+//     font-weight: 700;
+//   }
+// }
+
+.btn {
+
+  height: 63px;
+  border-radius: 4px;
+  background-color: #181818;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  font-size: 19px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  @media (min-width: $screen-xs) {
+    width: 100%;
+  }
+  @media (min-width: $screen-md) {
+    width: 303px;
+  }
+}

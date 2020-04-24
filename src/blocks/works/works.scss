@@ -1,0 +1,164 @@
+// В этом файле должны быть стили для БЭМ-блока works, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.works {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-xs) {
+    margin-top: 70px;
+  }
+  @media (min-width: $screen-lg) {
+    margin-top: 126px;
+  }
+}
+
+.swiper-container {
+  @media (min-width: $screen-lg) {
+    overflow: visible;
+  }
+}
+
+
+.works__item {
+
+  height: 469px;
+
+ 
+  @media (min-width: $screen-xs) {
+    width: 100%;
+  }
+  @media (min-width: $screen-lg) {
+    // box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.24);
+    margin-right: 22px;
+    margin-bottom: 17px;
+    width: calc((100%/5) - 22px);
+    &:last-of-type {
+      margin-right: 0;
+    }
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      .works__back {
+        transform: scale(1.07);
+      }
+      .works__logo {
+        transform: scale(0.8);
+      }
+      .works__descr  {
+        transform: scale(1.04);
+      }
+    }
+    &:nth-of-type(2n):nth-child(-n+5) {
+      transform: translateY(-20px);
+    }
+    &:nth-of-type(7),
+    &:nth-of-type(9) {
+      transform: translateY(-20px);
+    }
+  }
+
+}
+
+.works__back {
+  width: 100%;
+  height: 100%;
+  transition: 0.6s ease;
+    object-fit: cover;
+
+ 
+}
+
+.works__logo {
+  width: 140px;
+  height: 145px;
+  @include flex; 
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - (140px/2));
+  top: calc(50% - (145px/2));
+  transition: 0.6s ease;
+}
+
+.works__logo-pic {
+  object-fit: contain;
+}
+
+.works__descr {
+  width: 90%;
+  position: absolute;
+  left: calc(50% - (90%/2));
+  bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  transition: 0.6s ease;
+}
+
+.works__wrap {
+  width: 100%;
+  @include flex;
+  .swiper-wrapper {
+    @media (min-width: $screen-lg) {
+      flex-flow: row wrap;
+    }
+  }
+}
+
+
+.works__next,
+.comands__next {
+  position: absolute;
+  right: 0;
+  background-image: url('../img/next.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  top: calc(50% - (40px/2));
+  z-index: 4;
+  outline: none;
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+}
+
+.works__prev,
+.comands__prev {
+  position: absolute;
+  left: 0;
+  transform: rotate(-180deg);
+  background-image: url('../img/next.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  top: calc(50% - (40px/2));
+  z-index: 4;
+  outline: none;
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+}
+
+.comands__prev,
+.comands__next {
+  background-image: url('../img/next-black.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @media (min-width: $screen-lg) {
+    display: block;
+  }
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.1;
+}

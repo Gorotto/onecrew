@@ -1,0 +1,362 @@
+// В этом файле должны быть стили для БЭМ-блока header, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header {
+
+  $block-name:                &; // #{$block-name}__element
+  width: 100%;
+  @include flex;
+  padding: 15px 0 0;
+  position: relative;
+  @media (min-width: $screen-md) {
+    padding: 30px 0 0;
+   }
+  .container {
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+
+.header__menu {
+  margin: 15px 0 0;
+  padding: 0;
+  
+  flex: 2;
+  @include flex;
+  order: 2;
+  width: 100%;
+  justify-content: flex-start;
+  display: none;
+  @media (min-width: $screen-md) {
+    display: flex;
+    margin-top: 0;
+   order: 1;
+   width: auto;
+   
+  }
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px 0 0 20px; 
+    width: 100%;
+    @media (min-width: $screen-md) {
+      margin: 0 20px 0 0;
+      width: auto;
+     }
+    a {
+      color: #000;
+      font-size: 24px;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      @media (min-width: $screen-md) {
+        color: #8d8d8d;
+        font-size: 18px;
+       }
+    }
+    
+  }
+}
+
+.header__info {
+  @include flex;
+  flex: 2;
+  justify-content: flex-end;
+  @media (min-width: $screen-xs) {
+    display: none;
+    order: 3;
+  }
+  @media (min-width: $screen-md) {
+   display: flex;
+   order: 3;
+  }
+}
+
+.header__phone {
+  display: inline-block;
+  font-size: 26px;
+  color: #181818;
+  font-weight: 500;
+  text-decoration: none;
+  padding-left: 20px;
+  margin-top: 20px;
+  @media (min-width: $screen-md) {
+    padding-left: 0;
+    font-size: 18px;
+    margin-top: 0;
+   }
+}
+
+.header__logo {
+  @include flex;
+  text-decoration: none;
+  justify-content: flex-start;
+  text-align: left;
+  order: 1;
+  width: 80%;
+  img {
+    max-width: 65%;
+  }
+  @media (min-width: $screen-md) {
+    justify-content: center;
+    text-align: center;
+    order: 2;
+    flex: 2;
+    width: auto;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.logo__descr {
+  color: #181818;
+  font-size: 14px;
+  font-weight: 100;
+  width: 100%;
+  display: inline-block;
+  @media (min-width: $screen-md) {
+    font-size: 15px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}
+
+//**
+
+.header__wrap {
+  width: 100%;
+  @include flex;
+  justify-content: center;
+  align-content: flex-start;
+  margin-top: 50px;
+  @media (min-width: $screen-md) {
+    margin-top: 114px;
+   }
+}
+
+.header__title {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  color: #181818;
+  font-weight: 900;
+
+
+  @media (min-width: $screen-xs) {
+    font-size: 44px;
+    line-height: 36px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 53px;
+    line-height: 40px;
+  }
+  span {
+    width: 100%;
+    display: inline-block;
+    line-height: 20px;
+    font-weight: 100;
+    @media (min-width: $screen-xs) {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+    @media (min-width: $screen-lg) {
+      font-size: 38px;
+      margin-top: 0;
+    }
+  }
+  &::after {
+    content:'';
+    background-image: url('../img/onkey.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 96px;
+    height: 80px;
+    position: absolute;
+    left: 74%;
+    top: -46px;
+    @media (min-width: $screen-lg) {
+      left: 73%;
+    }
+  }
+}
+
+
+.head__price {
+
+  margin: 50px auto 0;
+  @include flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: $screen-xs) {
+    width: 100%;
+  }
+  @media (min-width: $screen-lg) {
+    width: 50%;
+  }
+}
+
+.head__text {
+  display: inline-block;
+
+  font-weight: 100;
+  width: 280px;
+  margin: 0;
+  @media (min-width: $screen-xs) {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: $screen-md) {
+    text-align: left;
+
+  }
+  @media (min-width: $screen-lg) {
+    
+    font-size: 22px; 
+  }
+}
+
+.head__calc-btn {
+  width: 303px;
+  height: 63px;
+  border-radius: 4px;
+  background-color: #181818;
+  display: inline-block;
+  text-align: center;
+  line-height: 66px;
+  font-size: 19px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lang {
+  margin: 0 0 0 20px;
+  padding: 0;
+  display: inline-block;
+  li {
+    list-style-type: none;
+    display: inline-block;
+    &:after {
+      content:'/';
+      font-size: 18px;
+      color: #181818;
+      font-weight: 900;
+      display: inline-block;
+      margin: 0 0px 0 5px;
+    }
+    &:last-of-type {
+      &::after {
+        display: none;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      color: #181818;
+      &:hover {
+        text-transform: capitalize;
+      }
+    }
+  }
+  .active a {
+    text-transform: capitalize;
+  }
+}
+
+
+.sandwich {
+  width: 34px;
+  height: 34px;
+  z-index: 200;
+  order: 2;
+  @media (min-width: $screen-md) {
+   display: none;
+    width: auto;
+  }
+ }
+
+.sw-topper {
+  position: relative;
+  top: 0;
+  width: 34px;
+  height: 3px;
+  background: #000;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  transition: transform 0.5s, top 0.2s;
+  display: block;
+}
+
+.sw-bottom {
+  position: relative;
+  width: 34px;
+  height: 3px;
+  top: 6.6px;
+  background: #000;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  transition: transform 0.5s, top 0.2s;
+  transition-delay: 0.2s, 0;
+}
+
+.sw-footer {
+  position: relative;
+  width: 34px;
+  height: 3px;
+  top: 13.5px;
+  background: #000;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  transition: all 0.5s;
+  transition-delay: 0.1s;
+}
+
+.sandwich.active .sw-topper {
+  top: 9px;
+  transform: rotate(-45deg); 
+}
+
+.sandwich.active .sw-bottom {
+  top: 6px;
+  transform: rotate(45deg); 
+}
+.sandwich.active .sw-footer {
+  opacity: 0;
+  top: 0;
+  transform: rotate(180deg);
+}
+
+
+
+.mobile__menu {
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+  position: absolute;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 0.3s;
+  .header__menu {
+    display: flex;
+  }
+}
+
+.mobile__menu.active {
+  transform: translateX(0);
+  opacity: 1;
+}

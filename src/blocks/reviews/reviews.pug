@@ -1,0 +1,34 @@
+mixin reviews()
+  section.reviews#clients
+    .container
+      .reviews__panel
+        h2.reviews__title РЕПУТАЦИЯ ГОВОРИТ ЗА НАС
+        .reviews__counts + 127 клиентов с 2016 года
+      .reviews__wrap
+        a.reviews__item(data-izimodal-open="#modal-topgun")
+          .reviews__label Алексей 
+            br
+            | Локонцев
+          .reviews__company TOPGUN
+        a.reviews__item(data-izimodal-open="#modal-wonder")
+          .reviews__label Дарья
+            br
+            | Михеева
+          .reviews__company WONDER nail studio
+        a.reviews__item(data-izimodal-open="#modal-topgun")
+          .reviews__label АЛЕКСАНДР
+            br
+            | ЛОПАТИН
+          .reviews__company MAKLER Fitness Consulting
+        a.reviews__item(data-izimodal-open="#modal-wonder")
+          .reviews__label Арам
+            br
+            | АЙРУМЯН
+          .reviews__company MAKLER Fitness Consulting
+        a.reviews__item(data-izimodal-open="#modal-wonder")
+          .reviews__label Ольга
+            br
+            | МОРОЗ
+          .reviews__company Moroz of Beaty
+    #modal-topgun.modais(data-izimodal-transitionin="fadeInUp", data-izimodal-title="Youtube",data-izimodal-iframeURL="https://www.youtube.com/embed/YNiulY19hF4?autoplay=1")
+    #modal-wonder.modais(data-izimodal-transitionin="fadeInUp", data-izimodal-title="Youtube",data-izimodal-iframeURL="https://www.youtube.com/embed/3kNv7NOQtxU?autoplay=1")

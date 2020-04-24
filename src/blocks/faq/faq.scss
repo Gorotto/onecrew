@@ -1,0 +1,148 @@
+// В этом файле должны быть стили для БЭМ-блока faq, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.faq {
+
+  $block-name:                &; // #{$block-name}__element
+  
+  @media (min-width: $screen-xs) {
+    padding: 20px 0;
+  }
+  @media (min-width: $screen-lg) {
+    padding: 130px 0;
+  }
+}
+
+.faq__titles {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  display: inline-block;
+  color: #000000;
+  font-weight: 900;
+  text-transform: uppercase;
+  @media (min-width: $screen-xs) {
+    font-size: 30px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 44px;
+  }
+}
+
+.faq__sub {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  color: #000000;
+
+  font-weight: 100;
+  @media (min-width: $screen-xs) {
+    font-size: 18px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 28px;
+  }
+}
+
+.faq__wrap {
+  width: 100%;
+  display: inline-block;
+  margin-top: 70px;
+}
+
+.faq__row {
+  width: 100%;
+  @include flex;
+}
+
+.faq__title {
+  width: 100%;
+  @include flex;
+  align-content: center;
+  align-items: center;
+  color: #000000;
+
+  font-weight: 500;
+  border-bottom: 2px solid #c0c0c0;
+  padding: 30px 20px 30px 0;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  @media (min-width: $screen-xs) {
+    font-size: 20px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 25px;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+  &::before {
+    content:'';
+
+    background-color: #000;
+    position: absolute;
+    right: 0;
+   
+      @media (min-width: $screen-xs) {
+        width: 12px;
+        height: 2px;
+        top:calc(50% - (2px/2));
+      }
+      @media (min-width: $screen-lg) {
+        width: 18px;
+        height: 6px;
+        top:calc(50% - (6px/2));
+      }
+  }
+  &::after {
+    content:'';
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg);
+    transition: 0.3s;
+      @media (min-width: $screen-xs) {
+        width: 12px;
+        height: 2px;
+        top:calc(50% - (2px/2));
+      }
+      @media (min-width: $screen-lg) {
+        width: 18px;
+        height: 6px;
+        top:calc(50% - (6px/2));
+      }
+  }
+}
+
+.faq__hide {
+ 
+  display: none;
+  color: #8b8b8b;
+  font-size: 16px;
+  font-family: $r;
+  @media (min-width: $screen-xs) {
+    width: 100%;
+  }
+  @media (min-width: $screen-lg) {
+    width: 80%;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.faq__row.open {
+  .faq__title {
+    border-bottom: 1px solid transparent;
+    &::after {
+      transform: rotate(0);
+    }
+  }
+  .faq__hide {
+    display: inline-block;
+    
+  }
+}

@@ -1,0 +1,239 @@
+// В этом файле должны быть стили для БЭМ-блока included, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.included {
+
+  $block-name:                &; // #{$block-name}__element
+  padding: 115px 0 100px;
+}
+
+.included__title {
+  width: 100%;
+  text-align: center;
+  color: #000000;
+
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  @media (min-width: $screen-xs) {
+    font-size: 30px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 44px;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    &::after {
+      content:'';
+      background-image: linear-gradient(to bottom, #ffdf00 0%, #ffab3e 100%);
+      width: 100%;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      bottom: 8px ;
+      z-index: -1;
+    }
+  }
+}
+
+.included__subtitle {
+  width: 100%;
+
+  margin: 0;
+  color: #000;
+  font-weight: 100;
+  display: inline-block;
+  text-align: center;
+  @media (min-width: $screen-xs) {
+    font-size: 18px;
+  }
+  @media (min-width: $screen-lg) {
+    font-size: 33px;
+  }
+}
+
+.included__list {
+  counter-reset: section;
+  width: 100%;
+  @include flex;
+}
+
+.included__item {
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  position: relative;
+
+  @media (min-width: $screen-xs) {
+    width: 100%;
+    margin-top: 40px;
+  }
+  @media (min-width: $screen-lg) {
+    width: 50%;
+    margin-top: 100px;
+    min-height: 200px;
+    padding-left: 85px;
+    padding-right: 70px;
+  }
+  @media (min-width: $screen-xl) {
+    padding-left: 160px;
+ 
+  }
+  &::after {
+    content:"№" counter(section);
+    counter-increment: section;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-family: $b;
+    font-size: 50px;
+    position: absolute;
+  
+    top: -18px;
+    z-index: -1;
+    @media (min-width: $screen-xs) {
+      display: none;
+    }
+    @media (min-width: $screen-lg) {
+      display: block;
+      left: 60px;
+    }
+    @media (min-width: $screen-xl) {
+      left: 130px;
+   
+    }
+  }
+  &:before {
+    content:'';
+
+  
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    @media (min-width: $screen-xs) {
+      width: 36px;
+      height: 36px;
+    }
+    @media (min-width: $screen-lg) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &:nth-of-type(1) {
+    &:before {
+      content:'';
+      background-image: url('../img/included1.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(2) {
+    &:before {
+      content:'';
+      background-image: url('../img/included2.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(3) {
+    &:before {
+      content:'';
+      background-image: url('../img/included3.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(4) {
+    &:before {
+      content:'';
+      background-image: url('../img/included4.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(5) {
+    &:before {
+      content:'';
+      background-image: url('../img/included5.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(6) {
+    &:before {
+      content:'';
+      background-image: url('../img/included6.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(7) {
+    &:before {
+      content:'';
+      background-image: url('../img/included7.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(7) {
+    &:before {
+      content:'';
+      background-image: url('../img/included7.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(8) {
+    &:before {
+      content:'';
+      background-image: url('../img/included8.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(9) {
+    &:before {
+      content:'';
+      background-image: url('../img/included9.png');
+            background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+  &:nth-of-type(10) {
+    &:before {
+      content:'';
+      background-image: url('../img/included10.png');
+    }
+  }
+}
+
+.included__titles {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+  @media (min-width: $screen-xs) {
+    padding-left: 50px;
+  }
+  @media (min-width: $screen-lg) {
+    padding-left: 0;
+  }
+}
+
+.included__text {
+  width: 100%;
+  margin: 10px 0 0;
+  display: inline-block;
+  font-family: $r;
+  font-size: 15px;
+  text-align: left;
+}

@@ -1,0 +1,17 @@
+extends ../pug/layout-home.pug
+
+block meta
+  title Главная
+  meta(name="description", content="")
+
+block header
+  +header()
+  +works()
+  +reviews()
+block content
+  +included()
+  +comands()
+  +faq()
+  +contact-form()
+block footer
+  +footer()

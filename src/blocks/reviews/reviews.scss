@@ -1,0 +1,165 @@
+// В этом файле должны быть стили для БЭМ-блока reviews, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.reviews {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-xs) {
+    padding-top: 40px;
+  }
+  @media (min-width: $screen-lg) {
+    padding: 140px 0 0;
+  }
+}
+
+.reviews__wrap {
+  width: 100%;
+  @include flex;
+  margin-top: 32px;
+}
+
+.reviews__item {
+
+  height: 254px;
+  
+  box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  @include flex;
+  align-content: flex-end;
+  align-items: flex-end;
+  background-image: linear-gradient(45deg, #292929 0%, #363636 50%, #0c0c0c 100%);
+  padding: 11px;
+  box-sizing: border-box;
+  position: relative;
+  transition: 0.5s;
+  @media (min-width: $screen-xs) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  @media (min-width: $screen-md) {
+    margin-right: 23px;
+    width: calc((100%/2) - 19px);
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: $screen-lg) {
+    width: calc((100%/3) - 19px);
+    &:nth-of-type(2n) {
+      margin-right: 23px;
+    }
+  }
+  @media (min-width: $screen-xl) {
+    width: calc((100%/5) - 19px);
+  }
+  &::after {
+    content: "";
+    background-image: url('../img/play-btn.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 43px;
+    height: 44px;
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    transition: 0.5s;
+  }
+  &:hover {
+    transform: scale(1.08);
+    &::after {
+      transform: scale(1.08);
+    }
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:nth-of-type(2) {
+    background-image: linear-gradient(45deg, #e6a84c 0%, #ce343b 50%, #cd267f 100%);
+  }
+  &:nth-of-type(3) {
+    background-image: linear-gradient(45deg, #27d6c8 0%, #1fb3a7 50%, #27d6c8 100%);
+  }
+  &:nth-of-type(4) {
+    background-image: linear-gradient(45deg, #cd2626 0%, #ff0000 50%, #d12c32 100%);
+  }
+  &:nth-of-type(5) {
+    background-color: #cd267d;
+  }
+}
+
+.reviews__label {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 25.01px;
+  text-transform: uppercase;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.reviews__company {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 100;
+  line-height: 25.01px;
+  text-transform: uppercase;
+}
+
+
+.reviews__panel {
+  width: 100%;
+  @include flex;
+  justify-content: space-between;
+}
+
+.reviews__title {
+
+  margin: 0;
+
+  display: inline-block;
+  color: #000000;
+  font-size: 28px;
+  font-weight: 700;
+  @media (min-width: $screen-xs) {
+   text-align: center;
+   width: 100%;
+  }
+  @media (min-width: $screen-lg) {
+    text-align: left;
+    width: auto;
+  }
+}
+
+.reviews__counts {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: underline;
+  position: relative;
+  @media (min-width: $screen-xs) {
+    text-align: center;
+    width: 100%;
+   }
+   @media (min-width: $screen-lg) {
+     text-align: right;
+     width: auto;
+   }
+  &::after {
+    content:'';
+    background-image: linear-gradient(to bottom, #ffdf00 0%, #ffab3e 100%);
+    width: 100%;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 3px ;
+    z-index: -1;
+  }
+}

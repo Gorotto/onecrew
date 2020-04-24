@@ -1,0 +1,21 @@
+mixin contact-form()
+  section.contact-form
+    .container
+      .contact-form__wrap
+        h2.contact-form__title СВЯЖИТЕСЬ С НАМИ
+          span Контактные данные:
+        form.contact-form__form
+          .contact-form__box
+            input.contact-form__field(type="text", placeholder="Имя *")
+            span.contact-form__border
+          .contact-form__box
+            input.contact-form__field(type="number", placeholder="Номер телефона *")
+            span.contact-form__border
+          .contact-form__box
+            input.contact-form__field(type="text", placeholder="Email")
+            span.contact-form__border
+          .contact-form__box.contact-form__area
+            textarea.contact-form__field(placeholder="Напишите нам")
+            span.contact-form__border
+          button(type='submit').btn Отправить
+          p.form__footnote Нажимая на кнопку, вы даете согласие на обработку персональных данных
