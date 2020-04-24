@@ -12,13 +12,14 @@
   @media (min-width: $screen-lg) {
     margin-top: 126px;
   }
-}
-
-.swiper-container {
-  @media (min-width: $screen-lg) {
-    overflow: visible;
+  .swiper-container {
+    @media (min-width: $screen-lg) {
+      overflow: visible;
+    }
   }
 }
+
+
 
 
 .works__item {

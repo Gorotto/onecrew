@@ -1,0 +1,53 @@
+// В этом файле должны быть стили для БЭМ-блока works-slider, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.works-slider {
+
+  $block-name:                &; // #{$block-name}__element
+  width: 80%;
+  margin: 125px auto 0;
+  @include flex;
+  .swiper-pagination {
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+.works-slider__item {
+  &:hover {
+    .works__back {
+      transform: scale(1.07);
+    }
+    .works__logo {
+      transform: scale(0.8);
+    }
+    .works__descr  {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+	background: #000;
+}
+.swiper-pagination-bullet-active .path{
+	display: inline-block !important;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash linear 120s;
+  animation-iteration-count: unset;
+}
+.path {
+	display: none;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

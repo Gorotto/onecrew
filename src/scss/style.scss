@@ -2,6 +2,7 @@
 
 // Глобальные подключения
 @import "grid.scss";
+@import "rfs.scss";
 @import "variables.scss";
 @import "elements.scss";
 @import "fonts.scss";
@@ -16,3 +17,6 @@
 @import "./src/blocks/comands/comands.scss";
 @import "./src/blocks/faq/faq.scss";
 @import "./src/blocks/contact-form/contact-form.scss";
+@import "./src/blocks/head/head.scss";
+@import "./src/blocks/main-section/main-section.scss";
+@import "./src/blocks/works-slider/works-slider.scss";

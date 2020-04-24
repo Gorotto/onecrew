@@ -12,6 +12,8 @@ $line-height:                 1.4;
 // $rubl:                        'ALSRubl', sans-serif;
 $b:                        'OpenSansBold', sans-serif;
 $r:                        'OpenSansRegular', sans-serif;
+$mb:                       'MontserratBold', sans-serif;
+$msb:                      'MontserratSemiBold', sans-serif;
 
 .container {
   @include container();

@@ -1,13 +1,17 @@
 extends ../pug/layout-home.pug
 
 block meta
-  title Главная
+  title Главная2
   meta(name="description", content="")
 
 block header
-  +head()
-
+  +header()
+  +works()
+  +reviews()
 block content
-  +main-section()
+  +included()
+  +comands()
+  +faq()
+  +contact-form()
 block footer
   +footer()
