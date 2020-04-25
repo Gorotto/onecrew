@@ -1,0 +1,76 @@
+// В этом файле должны быть стили для БЭМ-блока making, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.making {
+
+  $block-name:                &; // #{$block-name}__element
+  padding: 100px 0;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+
+.making__item {
+  border-radius: 5px;
+  background-color: #f3f5f6;
+  @include flex;
+  align-content: space-between;
+  padding: 52px 31px 26px;
+  box-sizing: border-box;
+  width: calc((100%/4) - 15px);
+  margin-right: 20px;
+  margin-top: 20px;
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+.making__thumb {
+  width: 100%;
+  display: inline-block;
+  text-align-last: left;
+}
+
+.making__pic {
+  max-width: 71px;
+  max-height: 70px;
+}
+
+.making__title {
+  width: 100%;
+  display: inline-block;
+  margin: 10px 0 18px;
+  text-align: left;
+  color: #111111;
+  font-family: $mb;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+
+}
+
+.making__descr {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+  opacity: 0.56;
+  color: #111111;
+  font-family: $mb;
+ 
+  line-height: 18px;
+  letter-spacing: -0.12px;
+  @media (min-width: $screen-lg) {
+    font-size: 11px;
+  }
+  @media (min-width: $screen-xxl) {
+    font-size: 12px;
+  }
+}
+
+
+.making__content {
+  width: 100%;
+  display: inline-block;
+}

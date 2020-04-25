@@ -1,0 +1,53 @@
+// В этом файле должны быть стили для БЭМ-блока histoty-company, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.histoty-company {
+
+  $block-name:                &; // #{$block-name}__element
+  background-color: #e6e9ec;
+  padding: 140px 0 84px;
+  box-sizing: border-box;
+}
+
+.histoty-company__title {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  color: #292c30;
+  font-family: $mb;
+  font-size: 37px;
+  font-weight: 700;
+  line-height: 32.45px;
+  letter-spacing: -0.36px;
+}
+
+.logo-mark {
+  background-color:#cacdd0;
+  padding: 9px 20px;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 30px;
+  margin-right: 30px;
+  font-family: $mr;
+  b {
+    font-family: $mb;
+  }
+}
+
+.histoty-company__sub {
+  width: 79%;
+  margin: 30px auto 0;
+  display: inline-block;
+  text-align: center;
+  color: #6a7076;
+  font-family: $mr;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.18px;
+}
