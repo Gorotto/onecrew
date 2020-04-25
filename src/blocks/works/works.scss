@@ -90,13 +90,14 @@
 }
 
 .works__descr {
-  width: 90%;
+  width: 95%;
   position: absolute;
-  left: calc(50% - (90%/2));
-  bottom: 10px;
+  left: calc(50% - (95%/2));
+  bottom: 40px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
+  font-family: $msb;
   font-weight: 400;
   transition: 0.6s ease;
 }

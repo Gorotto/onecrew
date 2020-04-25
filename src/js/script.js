@@ -84,27 +84,29 @@ $(document).ready(function(){
   var mySwiper = new Swiper ('.works-slider', {
     slidesPerView: 5,
     spaceBetween: 20,
-    slidesPerGroup:3,
+    slidesPerGroup:5,
     speed: 1000,
     loop: true,
-      autoplay: {
-          delay: 4000,
-          waitForTransition: true,
-          disableOnInteraction: false,
-        },
-    //   flipEffect: {
-    //   rotate: 30,
-    //   slideShadows: false,
-    // },
+    autoplay: {
+        delay: 4000,
+        waitForTransition: true,
+        disableOnInteraction: false,
+      },
+      flipEffect: {
+      rotate: 30,
+      slideShadows: false,
+    },
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
-            return '<span class="' + className + '">'+'<svg class="fp-arc-loader" width="16" height="16" viewBox="0 0 16 16">'+
-              '<circle class="path" cx="8" cy="8" r="5.5" fill="none" transform="rotate(-90 8 8)" stroke="#FFF"'+
-              'stroke-opacity="1" stroke-width="1.5px"></circle>'+
-          '<circle cx="8" cy="8" r="3" fill="#FFF"></circle>'+
+            return '<span class="' + className + '">'+'<svg class="fp-arc-loader" width="28" height="28" viewBox="0 0 28 28">'+
+            '<circle class="path2" cx="14" cy="14" r="13" fill="none"  stroke="#d9d9da"'+
+            'stroke-opacity="1" stroke-width="2px"></circle>'+
+              '<circle class="path" cx="2" cy="14" r="13" fill="none" transform="rotate(-90 8 8)" stroke="#98989a"'+
+              'stroke-opacity="1" stroke-width="2px"></circle>'+
+              '<circle cx="14" cy="14" r="2" fill="#131313"></circle>'+
               '</svg></span>';
           },
   
