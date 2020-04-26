@@ -52,3 +52,9 @@
     src: url('../fonts/MontserratRegular.woff2') format('woff2');
     font-weight: 400;
 }
+@font-face {
+    font-family: 'Montserrat-Light';
+    font-display: swap;
+    src: url('../fonts/Montserrat-Thin.woff2') format('woff2');
+    font-weight: 100;
+}

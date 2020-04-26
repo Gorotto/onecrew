@@ -6,31 +6,58 @@
 
   $block-name:                &; // #{$block-name}__element
   background-color: #e6e9ec;
-  padding-bottom: 100px;
   box-sizing: border-box;
+  @media (min-width: $screen-xs) {
+    padding-top: 50px;
+  }
+  @media (min-width: $screen-md) {
+    padding-top: 100px;
+  }
 }
 
 .dreamteam__wrap {
   width: 100%;
   display: flex;
-  flex-flow: column wrap;
-  align-content: space-between;
-  height: 700px;
 
+  align-content: space-between;
+  flex-flow: row wrap;
+  @media (min-width: $screen-md) {
+    flex-flow: column wrap;
+    height: 800px;
+  }
+  @media (min-width: $screen-lg) {
+    height: 550px;
+  }
+  @media (min-width: $screen-xl) {
+    height: 700px;
+  }
+  @media (min-width: $screen-xxl) {
+    height: 775px;
+  }
 
 }
 
 
 .dreamteam__item {   
-  width: calc((100% / 4) - 5px);
+  width: 100%;
   margin-bottom: 7px;
   overflow: hidden;
   border-radius:5px;
   position: relative;
-  &:nth-of-type(4n+1) { order: 1; }
-  &:nth-of-type(4n+2) { order: 2; }
-  &:nth-of-type(4n+3) { order: 3; }
-  &:nth-of-type(4n)   { order: 4; }
+  @media (min-width: $screen-md) {
+    width: calc((100% / 3) - 5px);
+    &:nth-of-type(3n+1) { order: 1; }
+    &:nth-of-type(3n+2) { order: 3; }
+    &:nth-of-type(3n)   { order: 2; }
+  }
+  @media (min-width: $screen-lg) {
+    width: calc((100% / 4) - 5px);
+    &:nth-of-type(4n+1) { order: 1; }
+    &:nth-of-type(4n+2) { order: 2; }
+    &:nth-of-type(4n+3) { order: 3; }
+    &:nth-of-type(4n)   { order: 4; }
+  }
+
   img {
     width: 100%;
     height: 100%;

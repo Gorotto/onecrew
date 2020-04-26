@@ -1,4 +1,21 @@
 $(document).ready(function(){
+  //
+      /*Dropdown Menu*/
+    $('.head__lang ').click(function () {
+      $(this).attr('tabindex', 1).focus();
+      $(this).toggleClass('active');
+      $(this).find('.lang-list').slideToggle(300);
+    });
+    $('.head__lang ').focusout(function () {
+      $(this).removeClass('active');
+      $(this).find('.lang-list').slideUp(300);
+    });
+    $('.head__lang .lang-list li').click(function () {
+      $(this).parents('.head__lang ').find('span').text($(this).text());
+      $(this).parents('.head__lang ').find('input').val($(this).data('dropdown-value'));
+    });
+/*End Dropdown Menu*/
+  //
   $(".sandwich").click(function () {
       $(this).toggleClass("active");
       $(".mobile__menu").toggleClass("active");
@@ -95,6 +112,23 @@ $(document).ready(function(){
       flipEffect: {
       rotate: 30,
       slideShadows: false,
+    },
+    breakpoints: {
+      300: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        slidesPerGroup:2,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        slidesPerGroup:3,
+      },
+      1000: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        slidesPerGroup:5,
+      },
     },
       // If we need pagination
       pagination: {

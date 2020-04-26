@@ -1,0 +1,352 @@
+// В этом файле должны быть стили для БЭМ-блока footer-new, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer-new {
+
+  $block-name:                &; // #{$block-name}__element
+
+}
+
+.footer {
+  width: 100%;
+  @include flex;
+  background-color: #000;
+
+  box-sizing: border-box;
+  @media (min-width: $screen-xs) {
+    padding: 20px 0 30px;
+  }
+  @media (min-width: $screen-md) {
+    padding: 90px 0 70px;
+  }
+}
+
+
+.footer__column {
+  @include flex;
+  align-content: flex-start;
+  align-content: flex-start;
+  &:nth-of-type(1) {
+ 
+    @media (min-width: $screen-xs) {
+      width: 100%;
+    }
+    @media (min-width: $screen-md) {
+      width: 60%;
+    }
+    @media (min-width: $screen-lg) {
+      width: 30%;
+    }
+  }
+  &:nth-of-type(2) {
+    width: 56%;
+    @media (min-width: $screen-xs) {
+      display: none;
+    }
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+  }
+  &:nth-of-type(3) {
+    @media (min-width: $screen-xs) {
+      width: 100%;
+      margin-top: 30px;
+    }
+    @media (min-width: $screen-md) {
+      width: 40%;
+      margin-top: 0;
+    }
+    @media (min-width: $screen-lg) {
+      width: 14%;
+      margin-top: 0;
+    }
+  }
+  .footer__column {
+    &:nth-of-type(1) {
+      width: 70%;
+      .footer__links {
+        width: 50%;
+      }
+    }
+    &:nth-of-type(2) {
+      width: 30%;
+      .footer__links {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer__slogan {
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-family: $mb;
+  line-height: 30px;
+  @media (min-width: $screen-xxl) {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  span {
+    width: 100%;
+    display: inline-block;
+    color: #888;
+  }
+}
+
+.footer__briff {
+  width: 100%;
+  display: inline-block;
+  margin-top: 8px;
+  p {
+    display: inline-block;
+    margin: 0;
+    color: #888;
+    font-size: 18px;
+    width: 100%;
+  }
+}
+
+
+.briff-btn {
+  width: 183px;
+  height: 45px;
+  border-radius: 5px;
+  margin-top: 25px;
+  border: 2px solid #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: $msb;
+  font-size: 14px;
+  text-align: center;
+  @include flex;
+  align-content: center;
+  justify-content: center;
+  transition: 0.2s;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.footer__links {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  li {
+    width: 100%;
+    display: inline-block;
+    list-style-type: none;
+    a {
+      color: #888888;
+      font-family: $mr;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 30px;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.footer__title {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: $msb;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.footer__social {
+  width: 100%;
+  @include flex;
+  justify-content: space-between;
+  
+}
+
+.social__links {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #191919;
+  text-decoration: none;
+  @include flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 9px 15px;
+  box-sizing: border-box;
+  @media (min-width: $screen-xs) {
+    width: 30%;
+  }
+  @media (min-width: $screen-md) {
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    transition: 0.7s}
+  &:hover {
+    &::before {
+      transform: rotate(360deg);
+    }
+  }
+  &::after {
+    content: '';
+    background-image: url('../img/arrow-small.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5px;
+    height: 8px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: calc(50% - (8px/2));
+  }
+  span {
+    color: #ffffff;
+    font-family: $mr;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.social__tg {
+  &::before {
+    content: '';
+    background-image: url('../img/tg-icon.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+.social__wa {
+  &::before {
+    content: '';
+    background-image: url('../img/wa-icon.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+.social__fb {
+  &::before {
+    content: '';
+    background-image: url('../img/fb-icon.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+
+
+//** footer__panel
+
+.footer__panel {
+  width: 100%;
+  @include flex;
+  border-top: 1px solid rgba(235, 236, 239, 0.15);
+  background-color: #000;
+  padding: 30px 0;
+  box-sizing: border-box;
+  .container {
+    justify-content: space-between;
+  }
+}
+
+.footer__logo {
+  color: #888888;
+  font-size: 14px;
+  font-family: $mr;
+  text-decoration: none;
+  letter-spacing: -1.01px;
+  span {
+    font-family: $mb;
+  }
+  @media (min-width: $screen-xs) {
+    order: 2;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+  @media (min-width: $screen-md) {
+    order: 1;
+    margin: 0;
+    width: auto;
+    text-align: left;
+  }
+}
+
+.footer__copyright,
+.footer__create {
+  color: #888888;
+  font-family: $mr;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12px;
+  margin: 0;
+  display: inline-block;
+}
+
+.footer__create {
+  @media (min-width: $screen-xs) {
+    order: 3;
+    text-align: center;
+    width: 100%;
+  }
+  @media (min-width: $screen-md) {
+    order: 3;
+    text-align: right;
+    width: auto;
+  }
+}
+
+.socials {
+  @include flex;
+  
+  
+  @media (min-width: $screen-xs) {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  @media (min-width: $screen-md) {
+    order: 2;
+    width: 26%;
+    justify-content: flex-start;
+  }
+}
+
+.socials__links {
+  @include flex;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.socials__links:hover .social__icon  {
+  fill: #fff;
+}
+
+.social__icon {
+  width: 14px;
+  height: 14px;
+  fill: #737373;
+  display: inline-block;
+}

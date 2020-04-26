@@ -1,2 +1,22 @@
 mixin head()
-  div head
+  header.head
+    .container
+      .head__hamburger
+        .hamburger
+          span.hamburger__line
+          span.hamburger__line
+          span.hamburger__line
+        span.hamburger__title Меню
+      a(href="").head__logo.logo
+        | ONE 
+        span CREW
+          sup ®
+      .head__lang
+        .select
+          span Русский	
+          i.fas.fa-chevron-down
+        input(type='hidden', name='lang')
+        ul.lang-list
+          li(data-dropdown-value='Русский') Русский
+          li(data-dropdown-value='English') English
+          

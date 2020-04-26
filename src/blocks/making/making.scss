@@ -5,9 +5,15 @@
 .making {
 
   $block-name:                &; // #{$block-name}__element
-  padding: 100px 0;
+
   box-sizing: border-box;
   background-color: #fff;
+  @media (min-width: $screen-xs) {
+    padding: 50px 0;
+  }
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+  }
 }
 
 
@@ -16,13 +22,28 @@
   background-color: #f3f5f6;
   @include flex;
   align-content: space-between;
-  padding: 52px 31px 26px;
+ 
   box-sizing: border-box;
-  width: calc((100%/4) - 15px);
-  margin-right: 20px;
+  width: 100%;
+  padding: 26px 31px 26px;
   margin-top: 20px;
-  &:nth-of-type(4n) {
-    margin-right: 0;
+
+  @media (min-width: $screen-md) {
+    width: calc(50% - 10px);
+    margin-right: 20px;  
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: $screen-lg) {
+    width: calc((100%/4) - 15px);
+    padding: 52px 31px 26px;
+    &:nth-of-type(2n) {
+      margin-right: 20px;
+    }
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
   }
 }
 
